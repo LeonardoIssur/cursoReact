@@ -1,0 +1,13 @@
+.imgCart{
+    width: 30px;
+    height: 30px;
+    background-color: azure;
+    border-radius: 30%;
+    margin-top: 15px;
+}
+
+.counterCart{
+    color: white;
+    margin: 0px;
+
+}
