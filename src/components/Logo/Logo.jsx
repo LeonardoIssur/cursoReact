@@ -8,7 +8,6 @@ const Logo = () =>{
             <div>
                 <img className={classes.imgLogo}  src={iconControl} />
             </div>
-            <p className={classes.nameLogo}> ISSUR GAMES</p>
         </a>
     )
 }

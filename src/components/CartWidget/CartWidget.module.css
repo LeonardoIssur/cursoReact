@@ -1,13 +1,14 @@
 .imgCart{
     width: 30px;
     height: 30px;
-    background-color: azure;
+    background-color: #fff;
     border-radius: 30%;
     margin-top: 15px;
+    transform: translate(250px , 10px);
 }
 
 .counterCart{
-    color: white;
-    margin: 0px;
-
+    color: #000;
+    margin-top: 0;
+    transform: translate(250px , 10px);
 }
