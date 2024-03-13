@@ -1,19 +1,43 @@
-import './Navbar.module.css'
+import React, { useEffect, useState } from 'react';
+import classes from './Navbar.module.css';
+import NavbarFunction from '../NavbarFunction/NavbarFunction';
 
-function navegation() {
+const Navbar = () => {
+  const [showCategories, setShowCategories] = useState(false);
+
+  const handleMouseEnter = () => {
+    setShowCategories(true);
+  };
+
+  const handleMouseLeave = () => {
+    setShowCategories(false);
+  };
+
+  useEffect(() => {
+    const nav = document.querySelector(`.${classes.nav}`);
+
+    const fixNav = () => {
+      if (window.scrollY > nav.offsetHeight + 150) {
+        nav.classList.add(classes.active);
+      } else {
+        nav.classList.remove(classes.active);
+      }
+    };
+
+    window.addEventListener('scroll', fixNav);
+
+    return () => {
+      window.removeEventListener('scroll', fixNav);
+    };
+  }, []);
+
   return (
-    <nav className="navbar">
-      <div className='container'>
-        <h1 className="logo"><a href="/index.html">My Website</a></h1>
-        <ul>
-          <li><a href="#" className="current">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </div>
-    </nav>
+    <NavbarFunction
+      showCategories={showCategories}
+      handleMouseEnter={handleMouseEnter}
+      handleMouseLeave={handleMouseLeave}
+    />
   );
-}
+};
 
-export default navegation
+export default Navbar;

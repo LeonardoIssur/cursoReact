@@ -1,9 +1,9 @@
-import Item from "../item/item"
-import itemlist from "../itemlist"
+import Item from '../Item/Item'
+import classes from "../Item/Item.module.css"
 
-const itemlist = ([ products]) => {
+const ItemList = ({ products })  => {
     return (
-        <div>
+        <div className={classes.cardsContainer}>
             {
                 products.map(product => {
                     return (<Item key={product.id} { ... product}/>)
@@ -13,4 +13,4 @@ const itemlist = ([ products]) => {
     )
 }
 
-export default itemlist
+export default ItemList
