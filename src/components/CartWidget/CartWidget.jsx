@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import imgCarrito56px from './assets/imgCarrito56px.png';
 import imgCarritoNegro from './assets/imgCarritoNegro.png';
 import classes from './CartWidget.module.css';
+import { Link } from 'react-router-dom';
 
 const CartWidget = () => {
   const [esScrollActivo, setScrollActivo] = useState(false);
@@ -27,12 +28,12 @@ const CartWidget = () => {
       <div className={classes.containerCart}>
         {esScrollActivo ? (
           <>
-            <img className={classes.imgCart} src={imgCarritoNegro} />
+            <Link to={'/cart'}><img className={classes.imgCart} src={imgCarritoNegro} /></Link>
             <p className={classes.counterCart2}>0</p>
           </>
         ) : (
           <>
-            <img className={classes.imgCart} src={imgCarrito56px} />
+            <Link to={'/cart'}><img className={classes.imgCart} src={imgCarrito56px} /></Link>
             <p className={classes.counterCart}>0</p>
           </>
         )}

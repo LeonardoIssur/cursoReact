@@ -6,12 +6,30 @@
 
 .counterCart{
     color: #fff;
-    transform: translate(5px , 8px);
+    background-color: #ff9b2b;
+    border-radius: 80%;
+    font-size: 15px;
+    width: 30px;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 5px;
+    transform: translate(-19px , -9px);
 }
 .containerCart {
     display: flex;
 }
 .counterCart2{
     color: #000;
-    transform: translate(5px , 8px);
+    background-color: #ff9b2b;
+    border-radius: 80%;
+    font-size: 15px;
+    width: 30px;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 5px;
+    transform: translate(-19px , -5px);
 }

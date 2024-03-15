@@ -1,7 +1,12 @@
 import ItemCount from "../ItemCount/ItemCount";
 import classes from "../Item/Item.module.css"
 
-const ItemDetail = ({ id, name, img, price, descripcion, category}) => {
+const ItemDetail = ({ name, img, price, descripcion, category, stock}) => {
+
+    const handleOnAdd = (quantity) => {
+        console.log('cantidad de el producto: ' + quantity)
+    }
+
     return (
         <div className={classes.card}>
             <img src={img}/>
@@ -9,7 +14,7 @@ const ItemDetail = ({ id, name, img, price, descripcion, category}) => {
             <p>descripcion: {descripcion}</p>
             <h4>categoria : {category}</h4>
             <h3>Precio: ${price}</h3>
-            <ItemCount stock={10}/>
+            <ItemCount stock={stock} onAdd={handleOnAdd}/>
         </div>
     )
 }
