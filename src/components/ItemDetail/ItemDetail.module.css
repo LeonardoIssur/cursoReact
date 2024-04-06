@@ -1,0 +1,68 @@
+.itemDetailContainer{
+    display: flex;  
+    align-items: center;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    margin: 50px;
+    padding: 15px;
+    overflow: hidden;
+    position: relative;
+}
+
+.itemDetailImg img{
+    border-radius: 15px ; 
+    width: 600px;
+    object-fit: cover;
+    height: auto;
+}
+.info {
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    margin: 30px;
+    padding: 25px;
+    border-radius: 15px;
+}
+.info p{
+    width: 90%;
+}
+.info .pDescuento {
+    margin-top: px;
+    color: #20dabe;
+}
+.info h3{
+    font-size: 30px;
+    font-weight: 100;
+}
+
+.infoMetodosDePago {
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    margin: 30px;
+    width: 100%;
+    padding: 25px;
+    border-radius: 15px;
+}
+.infoMetodosDePago a{
+    text-decoration: none;
+    color: #03eafa;
+}
+.btnPagos {
+    font-size: 18px;
+    padding: 20px;
+    background-color: #20dabe;
+    cursor: pointer;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    margin: 12px;
+}
+.infoContainer {
+    display: flex;
+}
+.iconsMetodosDePago {
+    display: flex;
+
+}
+.iconsMetodosDePago img{
+    width: 50px;
+    margin: 0px 20px;
+}

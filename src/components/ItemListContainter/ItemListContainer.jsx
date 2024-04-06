@@ -1,24 +1,39 @@
 import { useState, useEffect } from 'react'
-import { getProducts, getProductsByCategory, getProductsById } from '../../asyncMock'
 import ItemList from '../ItemList/ItemList'
 import { useParams } from 'react-router-dom'
+import { useNotification } from '../hooks/useNotification'
+
+import { getDocs, collection, query, where } from 'firebase/firestore'
+import { db } from '../../services/firebase/firebaseConfig'
 
 const ItemListContainer = ({ greeting }) => {
     const [products, setProducts] = useState([])
-
     const { categoryId } = useParams()
+
+    const { showNotification } = useNotification()
 
     useEffect(() => {
 
-        const asynFunction = categoryId ? getProductsByCategory : getProducts
+        const productsCollection = categoryId ? (
+            query(collection(db, 'products'), where('category', '==', categoryId))
+        ) : (
+             collection(db, 'products')
+        )
 
-        asynFunction(categoryId)
-            .then(result => {
-                setProducts(result)
+        getDocs(productsCollection)
+            .then(querySnapshot => {
+               const productsAdapted = querySnapshot.docs.map(doc => {
+
+                const data = doc.data()
+
+                return{ id: doc.id, ...data}
+               })
+               setProducts(productsAdapted)
             })
-            .catch(error => {
-                console.log(error)
+            .catch(() => {
+                showNotification('error', 'hubo un error al cargar los datos')
             })
+
     }, [categoryId])
 
     return (

@@ -1,0 +1,20 @@
+@keyframes slideRight {
+    0% {
+        transform: translateX(125%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+  }
+  
+  .textoDeslizante {
+    animation: slideRight 15s linear infinite;
+    white-space: nowrap; 
+    overflow: hidden;
+    display: inline-block; 
+  }
+  
+  .containerTexto {
+    width: 100%;
+    overflow: hidden;
+  }

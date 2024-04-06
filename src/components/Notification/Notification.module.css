@@ -1,0 +1,21 @@
+.notificationContainer {
+    right: 30px;
+    position: absolute;
+    z-index: 90000;
+    color: #fff;
+    padding: 20px;
+    border-radius: 20px 0px 20px 20px;
+    transition: opacity 1s, transform 1s;
+    animation: slideUp 0.9s forwards;
+}
+@keyframes slideUp {
+    0% {
+        bottom: -250px; 
+        opacity: 0;
+    }
+    100% {
+        bottom: 40px; 
+        opacity: 1;
+    }
+}
+

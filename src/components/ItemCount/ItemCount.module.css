@@ -1,0 +1,32 @@
+.btnsItemCount {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+.btnsItemCount button{
+    background-color: #20dabe;
+    border: none;
+    border-radius: 15px;
+    padding: 8px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 20px;
+    width: 100%;
+}
+.btnsItemCount h3{
+    padding: 25px;
+}
+.btnsItemCountContainer {
+    width: 50%;
+}
+.btnAgregarAlCarrito{
+    transform: translate(0px, -40px);
+    background-color: hsl(171, 74%, 49%, 0.1);
+    border: none;
+    border-radius: 15px;
+    padding: 10px;
+    color: #20dabe;
+    font-weight: 500;
+    font-size: 20px;
+    width: 100%;
+}
