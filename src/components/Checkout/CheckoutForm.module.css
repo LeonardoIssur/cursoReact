@@ -1,0 +1,60 @@
+.formContainer{
+    max-width: 400px;
+    margin: 0 auto;
+    font-family: 'Muli', sans-serif;
+    position: relative;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    padding: 30px;
+    border-radius: 10px;
+}
+.formContainer h1 {
+    color: #ef6664;
+}
+
+  label {
+    display: block;
+    margin-bottom: 20px;
+    position: relative;
+  }
+
+  input[type="text"],
+  input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+    outline: none;
+  }
+
+  input[type="text"]:focus,
+  input[type="email"]:focus {
+    border-color: #ef6664;
+  }
+
+  input[type="text"]::placeholder,
+  input[type="email"]::placeholder {
+    color: transparent;
+  }
+
+  input[type="text"]:focus::placeholder,
+  input[type="email"]:focus::placeholder {
+    color: #ccc;
+  }
+
+
+
+  button[type="submit"] {
+    background-color: #ec8e5a;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  button[type="submit"]:hover {
+    background-color: #ef6664;
+  }

@@ -6,10 +6,12 @@ import { Link } from 'react-router-dom';
 import { CartContext } from '../CartContext/CartContext'
 
 const CartWidgetFunction = () => {
-  const { cart } = useContext(CartContext)
+  //const { cart } = useContext(CartContext)
+
+  const { totalQuantity } = useContext(CartContext)
 
   const [esScrollActivo, setScrollActivo] = useState(false);
-  const [totalArticles, setTotalArticles] = useState(0);
+  //const [totalArticles, setTotalArticles] = useState(0);
 
   useEffect(() => {
     const manejarScroll = () => {
@@ -27,31 +29,32 @@ const CartWidgetFunction = () => {
     };
   }, []);
 
-  useEffect(() => {
-    let accu = 0;
+  //useEffect(() => {
+    //let accu = 0;
 
-    cart.forEach(prod => {
-      accu += prod.count
-    });
+    //cart.forEach(prod => {
+      //accu += prod.count
+    //});
 
-    setTotalArticles(accu);
-  }, [cart]);
+    //setTotalArticles(accu);
+  //}, [cart]);
 
   return (
     <div className={classes.containerCart}>
       {esScrollActivo ? (
         <>
           <Link to={'/cart'}><img className={classes.imgCart} src={imgCarritoNegro} /></Link>
-          <p className={classes.counterCart2}>{ totalArticles }</p>
+          <p className={classes.counterCart2}>{ isNaN(totalQuantity) ? '' : totalQuantity }</p>
         </>
       ) : (
         <>
           <Link to={'/cart'}><img className={classes.imgCart} src={imgCarrito56px} /></Link>
-          <p className={classes.counterCart}>{ totalArticles }</p>
+          <p className={classes.counterCart}>{ isNaN(totalQuantity) ? '' : totalQuantity }</p>
         </>
       )}
     </div>
   );
-};
+}
+  
 
 export default CartWidgetFunction;

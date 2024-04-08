@@ -6,25 +6,20 @@ import imgVisa from './assets/img-visa.svg'
 import imgMasterCard from './assets/img-masterCard.svg'
 import imgAmerican from './assets/img-americanExpress.svg'
 import { useNotification } from '../hooks/useNotification'
+import { Link } from "react-router-dom";
 
-const ItemDetail = ({ id, name, img, price, descripcion, category, stock}) => {
+const ItemDetail = ({ id, name, category, img, price, stock, description }) => {
+    const { addItem, isInCart } = useContext(CartContext);
+    const { showNotification } = useNotification();
 
-    const [quantity, setQuantity] = useState(0)
-
-    const {addItem} = useContext(CartContext)
-
-    const { showNotification } = useNotification()
-
-    const handleOnAdd = (count) => {
+    const handleOnAdd = (quantity) => {
         const objProductToAdd = {
-            id, name, price, count
-        }
-        showNotification ('success' , `Se agrego correctamente ${name}s al carrito`)
-
-        setQuantity(count)
-
-        addItem(objProductToAdd)
-    }
+            id, name, price, quantity
+        };
+        console.log(objProductToAdd);
+        showNotification('success', `Se agregó correctamente ${quantity} ${name}`);
+        addItem(objProductToAdd);
+    };
 
     return (
         <div className={classes.itemDetailContainer}>
@@ -34,11 +29,17 @@ const ItemDetail = ({ id, name, img, price, descripcion, category, stock}) => {
             <div className={classes.infoContainer}>
                 <div className={classes.info}>
                     <h2>{name}</h2>
-                    <p>Descripcion: {descripcion}</p>
+                    <p>Descripcion: {description}</p>
                     <h4>Categoria : {category}</h4>
                     <h3>${price}</h3>
                     <p className={classes.pDescuento}>en descuento de un 20%</p>
-                    <ItemCount stock={stock} onAdd={handleOnAdd}/>
+                    <footer>
+                {!isInCart(id) ? (
+                    <ItemCount onAdd={handleOnAdd} stock={stock} />
+                ) : (
+                    <Link to='/cart'>Finalizar compra</Link>
+                )}
+            </footer>
                     <h5>Stock disponible ({stock})</h5><p> Almacenado y empaquetado por Servientrega</p>
                 </div> 
                 <div className={classes.infoMetodosDePago}>
@@ -59,7 +60,7 @@ const ItemDetail = ({ id, name, img, price, descripcion, category, stock}) => {
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default ItemDetail
+export default ItemDetail;

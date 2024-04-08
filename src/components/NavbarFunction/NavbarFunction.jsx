@@ -9,22 +9,22 @@ const NavbarFunction = ({ showCategories, handleMouseEnter, handleMouseLeave }) 
     <nav className={`${classes.nav}`}>
       <div className={classes.container}>
         <ul>
-          <li><a href="#" className={classes.current}>Inicio</a></li>
-          <li><a href="#">Vender</a></li>
-          <h1><a href="/index.html">ISSUR'S.GAMES</a></h1>
+          <li><Link className={classes.current} to='/' element={<ItemListContainer/>}>Inicio</Link></li>
+          <li><Link to='/Vender'>Vender</Link></li>
+          <h1><Link to='/' element={<ItemListContainer/>}>ISSUR'S.GAMES</Link></h1>
           <li
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
             <span>
-                <a href="">Categorias</a>
+                <Link href="">Categorias</Link>
                 {showCategories && (
                     <ul
                         className={classes.categoryList}
                         onMouseEnter={handleMouseEnter}
                         onMouseLeave={handleMouseLeave}
                     >
-                        <li><Link to='/' element={<ItemListContainer greeting={'Todas las Categorias'}/>}>Todas las Categorias</Link></li>
+                        <li><Link to='/' element={<ItemListContainer/>}>Todas las Categorias</Link></li>
                         <li><Link to='/category/aventuras'>Aventuras</Link></li>
                         <li><Link to='/category/carreras'>Carreras</Link></li>
                         <li><Link to='/category/juegos de rol'>Juegos de Rol</Link></li>
@@ -32,7 +32,7 @@ const NavbarFunction = ({ showCategories, handleMouseEnter, handleMouseLeave }) 
                   )}
             </span>
           </li>
-          <li><a href="#">Contactos</a></li>
+          <li><Link to='/Contactos'>Contactos</Link></li>
         </ul>
         <CartWidget />
       </div>

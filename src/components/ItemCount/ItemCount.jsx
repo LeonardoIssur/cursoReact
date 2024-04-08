@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import classes from './ItemCount.module.css'
 
-const ItemCount = ({ initial = 1, stock, onAdd}) => {
-    const [count, setcount] = useState(initial)
+const ItemCount = ({ initialValue = 1, stock, onAdd}) => {
+    const [count, setcount] = useState(initialValue)
 
     const decrement = () => {
         if (count > 1) {

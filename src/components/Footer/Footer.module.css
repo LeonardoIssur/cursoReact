@@ -1,0 +1,36 @@
+.footerContainer {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    border-top: 1px  solid;
+    justify-content: space-around;
+}
+.footerInfo {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+
+.footerRedesSociales {
+    display: flex;
+    margin: 10px;
+    justify-content: center;
+    align-items: center;
+}
+.footerRedesSociales a {
+    padding: 10px 50px;
+    cursor: pointer;
+}
+.footerRedesSociales h4 {
+    padding: 10px 50px;
+}
+.footerRedesSociales a:hover{
+    text-decoration: underline;
+    color: rgba(0, 0, 0, 0.7);
+}
+.imgLogoFooter {
+    cursor: pointer;
+    width: 80px;
+    height: 80px;
+}

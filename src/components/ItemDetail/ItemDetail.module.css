@@ -7,13 +7,14 @@
     padding: 15px;
     overflow: hidden;
     position: relative;
+
 }
 
 .itemDetailImg img{
     border-radius: 15px ; 
     width: 600px;
     object-fit: cover;
-    height: auto;
+    height: 700px !important;
 }
 .info {
     width: 100%;
